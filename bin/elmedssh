@@ -8,10 +8,12 @@ sudo ip addr add 192.168.0.62/32 dev lo || true
 sudo ip addr add 192.168.0.204/32 dev lo || true
 sudo ip addr add 192.168.1.21/32 dev lo || true
 sudo ip addr add 192.168.1.16/32 dev lo || true
+sudo ip addr add 192.168.0.171/32 dev lo || true
 
 ssh "$ELMED_SSH_USER@$ELMED_SSH_HOST" -p "$ELMED_SSH_PORT" \
   -L 192.168.0.62:4999:192.168.0.62:4999 \
   -L 192.168.0.204:5999:192.168.0.204:5999 \
   -L 192.168.0.204:8090:192.168.0.204:8090 \
+  -L 192.168.0.171:5002:192.168.0.171:5002 \
   -L 192.168.1.21:9000:192.168.1.21:9000 \
   -L 192.168.1.16:5432:192.168.1.16:5432
