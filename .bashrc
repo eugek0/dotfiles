@@ -112,4 +112,4 @@ shopt -s expand_aliases
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
-export TERM=xterm-256color
+. "$HOME/.cargo/env"

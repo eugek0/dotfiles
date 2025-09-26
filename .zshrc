@@ -3,19 +3,9 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export TERM=xterm-256color
-
-export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
 
-
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-# Exports
-export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:~/.local/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -112,21 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
-
-# INFO: ALIASES
+# INFO: Aliases
 alias cls="clear"
-alias nv="nvim"
 alias nvconf="cd ~/.config/nvim && nvim"
+alias lvconf="cd ~/.config/lvim && lvim"
 alias lint="./node_modules/eslint/bin/eslint.js 'src/**/*.{js,jsx,json}'"
 alias lintdiff="git diff --name-only | grep -E '\.(js|jsx|json)$' | sed 's|^app/client/||' | xargs ./node_modules/eslint/bin/eslint.js"
+alias tmux="TERM=screen-256color-bce tmux"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
-# bun completions
-[ -s "/home/eugene/.bun/_bun" ] && source "/home/eugene/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
