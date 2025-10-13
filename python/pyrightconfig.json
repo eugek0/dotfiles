@@ -1,6 +1,6 @@
 {
   "pythonVersion": "3.10.17",
-  "typeCheckingMode": "basic",
+  "typeCheckingMode": "off",
   "venvPath": "/home/eugene/.pyenv/versions/",
   "venv": "webmis"
 }
